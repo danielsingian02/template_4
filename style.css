@@ -282,4 +282,41 @@ header button {
 }
 .site-content-search article:hover {
   background-color: white;
+}
+
+.container {
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+}
+.container .media {
+  border: 2px solid black;
+  border-radius: 12px;
+  color: black;
+}
+.container .media .media-content {
+  margin: 1.5em;
+}
+.container .media .media-content .read-more {
+  background-color: black;
+  padding: 0.7rem 1rem;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 1rem;
+  border-radius: 12px;
+}
+.container .media a {
+  text-decoration: none;
+  color: inherit;
+}
+.container .media:hover {
+  background-color: white;
+}
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
