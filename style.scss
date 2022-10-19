@@ -7,6 +7,13 @@ Author: iPhiTech IT Digital Solutions Corporation
 Author URI: iPhiTech IT Digital Solutions Corporation
 */
 
+@use 'sass:math';
+
+@function pxToRem( $px ) {
+    @return math.div( $px, 16px ) * 1rem;
+}
+
+
 $primary-color: black;
 
 // Media Query
@@ -16,8 +23,9 @@ $media_mobile   : "only screen and (max-width: 767px)";
 $media_mobile_sm: "only screen and (max-width: 425px)";
 $media_mobile_xs: "only screen and (max-width: 375px)";
 
-// Importing the Playfair Display font from Google Fonts
+// Importing the Playfair Display and Montserrat font from Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @mixin setBackgroundImage( 
     $img, 
@@ -91,4 +99,140 @@ header {
         }
     }
 
+}
+
+// Sets the content width to 60%
+.banner, .intro, .gallery, .latest-news, .map, .copyright-footer {
+    width: 80%;
+    margin: auto;
+    display: flex;
+
+    @media #{ $media_mobile } {
+        width: 95%;
+    }
+}
+
+// Content Container's CSS
+.intro, .gallery, .latest-news, .map, .copyright-footer {
+    background-color: rgba(white, .9);
+    color: black;
+}
+
+// Banner
+.banner {
+    padding: 97px 0;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    row-gap: 2rem;
+    text-align: center;
+
+    & h2 {
+        font-size: 48px;
+        font-weight: 400;
+    }
+
+    & button {
+        border: 1px solid white;
+        background-color: transparent;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        color: white;
+
+        & a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
+.intro {    
+    flex-direction: column;
+    align-items: center;
+    padding: pxToRem( 50px ) 2rem;
+    row-gap: 1rem;
+
+    & h2 {
+        font-weight: 400;
+        font-size: pxToRem( 48px );
+        text-align: center;
+    }
+
+    & p {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+
+    @media #{ $media_mobile } {
+        flex-direction: column;
+        row-gap: 2rem;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+}
+
+// Latest News
+.latest-news {
+    flex-direction: row;
+    justify-content: center;
+    padding: pxToRem( 50px ) 2rem;
+
+    & > * {
+        display: flex;
+        width: 100%;
+        flex-direction: column
+    }
+
+    & .col2 {
+        height: 100%;
+        align-items: right;
+        text-align: right;
+        justify-content: space-between;
+        margin: auto;
+
+        & p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        @media #{ $media_mobile } {
+            justify-content: left;
+            text-align: left;
+        }
+    }
+
+    @media #{ $media_mobile } {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}
+
+// Map
+.map > img {
+    width: 100%;
+}
+
+.copyright-footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+
+    text-align: center;
 }
