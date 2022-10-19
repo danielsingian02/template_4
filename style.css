@@ -236,7 +236,7 @@ header button {
   background-color: initial;
 }
 .site-content-search > .search-results {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
   padding: inherit;
@@ -279,4 +279,7 @@ header button {
 }
 .site-content-search article:hover a {
   color: inherit;
+}
+.site-content-search article:hover {
+  background-color: white;
 }/*# sourceMappingURL=style.css.map */
