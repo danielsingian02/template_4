@@ -35,7 +35,7 @@ $media_mobile_xs: "only screen and (max-width: 375px)";
 ) {
     background: {
         image: $img;
-        size: $size;
+        size: 100% auto;
         position: $position;
         repeat: $repeat;
     };
@@ -44,7 +44,7 @@ $media_mobile_xs: "only screen and (max-width: 375px)";
 body {
     font-family: 'Playfair Display', sans-serif;
     width: 100%;
-    @include setBackgroundImage( url(assets/images/banner.png), contain, top, repeat-y);
+    @include setBackgroundImage( url(assets/images/banner.png), auto, top, repeat-y);
 }
 
 header {
@@ -348,3 +348,5 @@ header {
         }
     }
 }
+
+// Archives

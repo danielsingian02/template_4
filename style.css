@@ -12,7 +12,7 @@ body {
   font-family: "Playfair Display", sans-serif;
   width: 100%;
   background-image: url(assets/images/banner.png);
-  background-size: contain;
+  background-size: 100% auto;
   background-position: top;
   background-repeat: repeat-y;
 }
