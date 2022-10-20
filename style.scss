@@ -19,6 +19,7 @@ $primary-color: black;
 // Media Query
 $media_desktop  : "only screen and (max-width: 1200px)";
 $media_tablet   : "only screen and (max-width: 1024px)";
+$media_tablet_xs    : "only screen and (min-width: 991px)";
 $media_mobile   : "only screen and (max-width: 767px)";
 $media_mobile_sm: "only screen and (max-width: 425px)";
 $media_mobile_xs: "only screen and (max-width: 375px)";
@@ -165,6 +166,12 @@ header {
             background-color: white;
             color: black;
         }
+    }
+}
+
+.navbar-toggler {
+    @media #{ $media_tablet_xs } {
+        display: none;
     }
 }
 
